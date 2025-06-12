@@ -1,16 +1,15 @@
 from django.urls import path
-from blog import views
+from .import views
 
 app_name = 'blog'
 
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path(
-        'category/<slug:category_slug>/',
-        views.category_posts,
-        name='category_posts',
-    ),
+    path('category/<slug:category_slug>/',
+         views.category_posts,
+         name='category_posts'
+         ),
     path('profile/<username>/', views.profile_view, name='profile'),
     path(
         'profile/<slug:username>/edit_profile/',

@@ -1,28 +1,8 @@
 from django.contrib import admin
-
-from blog.models import Post, Category, Location
-
-
-class PostAdmin(admin.ModelAdmin):
-    search_fields = (
-        'title',
-        'text',
-        'pub_date',
-    )
+from .models import Post, Category, Location, Comment
 
 
-class CategoryAdmin(admin.ModelAdmin):
-    search_fields = (
-        'title',
-        'description',
-    )
-
-
-class LocationAdmin(admin.ModelAdmin):
-    search_fields = ('name',)
-
-
-admin.site.empty_value_display = 'Не задано'
-admin.site.register(Post, PostAdmin)
-admin.site.register(Category, CategoryAdmin)
-admin.site.register(Location, LocationAdmin)
+admin.site.register(Post)
+admin.site.register(Category)
+admin.site.register(Location)
+admin.site.register(Comment)
