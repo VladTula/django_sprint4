@@ -8,13 +8,13 @@ User = get_user_model()
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ['text']  # post и author будут назначаться вьюхой, чтобы избежать ошибки "Обязательное поле"
+        fields = ['text']
 
 
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        exclude = ['author']  # автор назначается в вьюхе
+        exclude = ['author']
 
 
 class CustomUserCreationForm(UserCreationForm):

@@ -17,7 +17,7 @@ LIMIT_POSTS = 10
 
 def profile_view(request, username):
     user = get_object_or_404(User, username=username)
-    posts = user.posts.all()  # related_name='posts' добавлен в модели
+    posts = user.posts.all()
 
     current_time = timezone.now()
 
